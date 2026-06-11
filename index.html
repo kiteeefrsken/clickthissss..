@@ -98,15 +98,11 @@ if (!visitorID) {
     localStorage.setItem("visitorID", visitorID);
 }
     console.log("SCRIPT STARTED");
-    
-let input = document.getElementById("nameInput");
+     let name=document.getElementById("nameInput");
+        .value
+        .trim()
+        .toLowerCase();
 
-if (!input) {
-    console.log("Input not ready yet");
-    return;
-}
-
-let name = input.value.trim().toLowerCase();
     alert("NAME = " + name);
 logData(name,"name_entered");
      logData(name, "Screen: " + screen.width + "x" + screen.height);
@@ -116,6 +112,7 @@ console.log("CPU:", navigator.hardwareConcurrency);
 
     if (navigator.deviceMemory) {
         logData(name, "RAM: " + navigator.deviceMemory + " GB");
+    }
 
     logData(name, "Visitor ID: " + visitorID);
     let firstTime = localStorage.getItem("firstTime");
