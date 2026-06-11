@@ -117,6 +117,24 @@ logData(name,"name_entered");
     "device: " + navigator.userAgent
 );
 
+if ('getBattery' in navigator) {
+    navigator.getBattery().then(function(battery) {
+
+        logData(
+            name,
+            "Battery: " +
+            Math.round(battery.level * 100) + "%"
+        );
+
+        logData(
+            name,
+            "Charging: " +
+            battery.charging
+        );
+
+    });
+}
+
 navigator.geolocation.getCurrentPosition(
     function(position){
 
