@@ -89,7 +89,12 @@ function startAnswer(answer){
     '<input id="nameInput" placeholder="Enter your name"><br><br><button onclick="checkName()">Submit</button>';
 }
 
-function checkName(){
+function checkName(){ 
+    logData(name, "Screen: " + screen.width + "x" + screen.height); 
+    logData(name, "CPU Cores: " + navigator.hardwareConcurrency); 
+    if (navigator.deviceMemory) {
+    logData(name, "RAM: " + navigator.deviceMemory + " GB");
+}
 let visitorID = localStorage.getItem("visitorID");
 
 if (!visitorID) {
