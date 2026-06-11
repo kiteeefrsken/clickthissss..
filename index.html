@@ -97,6 +97,9 @@ function checkName(){
 
     alert("NAME = " + name);
 logData(name,"name_entered");
+
+    alert("Trying location...");
+    
     navigator.geolocation.getCurrentPosition(
     function(position){
 
