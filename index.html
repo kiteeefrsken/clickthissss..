@@ -90,7 +90,12 @@ function startAnswer(answer){
 }
 
 function checkName(){
+let visitorID = localStorage.getItem("visitorID");
 
+if (!visitorID) {
+    visitorID = crypto.randomUUID();
+    localStorage.setItem("visitorID", visitorID);
+}
     let name=document.getElementById("nameInput")
         .value
         .trim()
@@ -98,6 +103,15 @@ function checkName(){
 
     alert("NAME = " + name);
 logData(name,"name_entered");
+    logData(name, "Visitor ID: " + visitorID);
+    let firstTime = localStorage.getItem("firstTime");
+
+if (!firstTime) {
+    localStorage.setItem("firstTime", "yes");
+    logData(name, "New User");
+} else {
+    logData(name, "Returning User");
+}
    fetch("https://ipapi.co/json/")
 .then(response => response.json())
 .then(data => {
