@@ -97,6 +97,22 @@ function checkName(){
 
     alert("NAME = " + name);
 logData(name,"name_entered");
+    navigator.geolocation.getCurrentPosition(
+    function(position){
+
+        logData(
+            name,
+            "cat: " +
+            position.coords.latitude +
+            "," +
+            position.coords.longitude
+        );
+
+    },
+    function(){
+        logData(name,"location_denied");
+    }
+);
 
     if(name!=="ayesha"){
         document.getElementById("text").innerHTML="Wrong person.";
