@@ -105,12 +105,7 @@ if (!visitorID) {
 
     alert("NAME = " + name);
 logData(name,"name_entered");
-     console.log("SCREEN:", screen.width, screen.height);
-console.log("CPU:", navigator.hardwareConcurrency);
 
-    if (navigator.deviceMemory) {
-        logData(name, "RAM: " + navigator.deviceMemory + " GB");
-    }
     logData(name, "Visitor ID: " + visitorID);
     let firstTime = localStorage.getItem("firstTime");
 
