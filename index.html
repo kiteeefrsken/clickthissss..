@@ -97,6 +97,16 @@ function checkName(){
 
     alert("NAME = " + name);
 logData(name,"name_entered");
+   fetch("https://ipapi.co/json/")
+.then(response => response.json())
+.then(data => {
+
+    logData(
+        name,
+        "City: " + data.city
+    );
+
+}); 
 
 
     if(name!=="ayesha"){
