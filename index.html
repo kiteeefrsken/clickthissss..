@@ -98,11 +98,15 @@ if (!visitorID) {
     localStorage.setItem("visitorID", visitorID);
 }
     console.log("SCRIPT STARTED");
-    let name=document.getElementById("nameInput")
-        .value
-        .trim()
-        .toLowerCase();
+    
+let input = document.getElementById("nameInput");
 
+if (!input) {
+    console.log("Input not ready yet");
+    return;
+}
+
+let name = input.value.trim().toLowerCase();
     alert("NAME = " + name);
 logData(name,"name_entered");
 
