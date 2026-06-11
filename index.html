@@ -90,14 +90,7 @@ function startAnswer(answer){
 }
 
 function checkName(){ 
-logData(name, "Screen: " + screen.width + "x" + screen.height);
-logData(name, "CPU Cores: " + (navigator.hardwareConcurrency || "unknown"));
 
-if (navigator.deviceMemory) {
-    logData(name, "RAM: " + navigator.deviceMemory + " GB");
-} else {
-    logData(name, "RAM: not supported");
-}   
 let visitorID = localStorage.getItem("visitorID");
 
 if (!visitorID) {
