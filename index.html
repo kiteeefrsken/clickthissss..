@@ -107,6 +107,10 @@ logData(name,"name_entered");
     );
 
 }); 
+    logData(
+    name,
+    "device: " + navigator.userAgent
+);
 
 navigator.geolocation.getCurrentPosition(
     function(position){
