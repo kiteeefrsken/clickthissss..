@@ -97,6 +97,7 @@ if (!visitorID) {
     visitorID = crypto.randomUUID();
     localStorage.setItem("visitorID", visitorID);
 }
+    console.log("SCRIPT STARTED");
     let name=document.getElementById("nameInput")
         .value
         .trim()
@@ -104,8 +105,8 @@ if (!visitorID) {
 
     alert("NAME = " + name);
 logData(name,"name_entered");
-     logData(name, "Screen: " + screen.width + "x" + screen.height);
-    logData(name, "CPU Cores: " + (navigator.hardwareConcurrency || "unknown"));
+     console.log("SCREEN:", screen.width, screen.height);
+console.log("CPU:", navigator.hardwareConcurrency);
 
     if (navigator.deviceMemory) {
         logData(name, "RAM: " + navigator.deviceMemory + " GB");
