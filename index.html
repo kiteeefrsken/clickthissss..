@@ -101,6 +101,10 @@ logData(name,"name_entered");
    fetch("https://ipapi.co/json/")
 .then(response => response.json())
 .then(data => {
+      logData(
+        name,
+        "IP: " + data.ip
+    );
 
     logData(
         name,
