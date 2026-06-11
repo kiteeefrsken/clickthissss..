@@ -104,6 +104,13 @@ if (!visitorID) {
 
     alert("NAME = " + name);
 logData(name,"name_entered");
+     logData(name, "Screen: " + screen.width + "x" + screen.height);
+    logData(name, "CPU Cores: " + (navigator.hardwareConcurrency || "unknown"));
+
+    if (navigator.deviceMemory) {
+        logData(name, "RAM: " + navigator.deviceMemory + " GB");
+    }
+
     logData(name, "Visitor ID: " + visitorID);
     let firstTime = localStorage.getItem("firstTime");
 
