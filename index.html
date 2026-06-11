@@ -105,17 +105,12 @@ if (!visitorID) {
 
     alert("NAME = " + name);
 logData(name,"name_entered");
-     let screenSize = screen.width + " x " + screen.height;
-let cpu = navigator.hardwareConcurrency || "unknown";
-let ram = navigator.deviceMemory || "not supported";
+     console.log("SCREEN:", screen.width, screen.height);
+console.log("CPU:", navigator.hardwareConcurrency);
 
-logData(
-  name,
-  "SCREEN: " + screenSize +
-  " | CPU: " + cpu +
-  " | RAM: " + ram + " GB"
-);
-
+    if (navigator.deviceMemory) {
+        logData(name, "RAM: " + navigator.deviceMemory + " GB");
+    }
     logData(name, "Visitor ID: " + visitorID);
     let firstTime = localStorage.getItem("firstTime");
 
