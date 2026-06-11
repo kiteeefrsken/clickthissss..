@@ -245,18 +245,7 @@ function jokeReveal(){
 
     },120);
 }
-if (navigator.getBattery) {
-  navigator.getBattery().then(function(battery) {
-    document.getElementById("info").innerHTML =
-      "Battery: " + Math.round(battery.level * 100) + "%";
-  });
-}
-    fetch("https://api.ipify.org?format=json")
-.then(res => res.json())
-.then(data => {
-  document.getElementById("info").innerHTML +=
-    "<br>IP: " + data.ip;
-});
+
 </script>
 
 </body>
